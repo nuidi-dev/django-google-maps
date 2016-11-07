@@ -1,0 +1,29 @@
+{% load staticfiles %}
+
+<div class="google-map" id="{{ name }}"></div>
+<link rel="stylesheet" type="text/css" href="{% static 'css/map-style.css' %}" />
+
+<script>
+  function initMap() {
+    var center = {lat: 52.599049, lng: 18.771830};
+
+    //// MAP
+    var map = new google.maps.Map(document.getElementById('{{ name }}'), {
+      zoom: 4,
+      center: center
+    });
+
+    //// MARKERS
+    {% for marker in markers %}
+      var marker = new google.maps.Marker({
+        position: {lat: {{ marker.coords.lat }}, lng: {{ marker.coords.lng }}},
+        map: map
+      });
+    {% endfor %}
+
+  }
+</script>
+
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key={{ API_KEY }}&callback=initMap"></script>
+{{ markers }}
