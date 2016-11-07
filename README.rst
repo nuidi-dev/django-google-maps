@@ -27,11 +27,11 @@ Usage
 
 In view.py:
 
-    markers = [ 
-        {'name': 'marker_name_1', 'coords': {'lng': 50.3054, 'lat': 20.3049 }},
-        {'name': 'marker_name_2', 'coords': {'lng': 51.3040, 'lat': 21.3984 }}
-    ]
+  markers = [ 
+    {'name': 'marker_name_1', 'lng': 50.3054, 'lat': 20.3049 },
+    {'name': 'marker_name_2', 'lng': 51.3040, 'lat': 21.3984 }
+  ]
 
 In template:
 
-    {% google_map 'map_name' markers %}
+  {% google_map 'map_name' markers %}

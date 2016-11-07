@@ -16,7 +16,7 @@
     //// MARKERS
     {% for marker in markers %}
       var marker = new google.maps.Marker({
-        position: {lat: {{ marker.coords.lat }}, lng: {{ marker.coords.lng }}},
+        position: {lat: {{ marker.lat }}, lng: {{ marker.lng }}},
         map: map
       });
     {% endfor %}
