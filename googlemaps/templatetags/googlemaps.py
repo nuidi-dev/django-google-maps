@@ -4,7 +4,7 @@ from django.conf import settings
 register = template.Library()
 
 @register.inclusion_tag('google-maps/map.html')
-def google_map(name, *args, **kwargs):
+def googlemap(name, *args, **kwargs):
 
     """ Tag for rendering google maps """
 
